@@ -1,0 +1,102 @@
+body {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+:root {
+  --h1: 30px;
+  --h2: 18px;
+  --h3: 16px;
+  --h4: 18px;
+  --h5: 16px;
+  --h6: 14px;
+}
+
+@media (min-width: 414px) {
+  :root {
+    --h1: 60px;
+    --h2: 38px;
+    --h3: 24px;
+    --h4: 18px;
+    --h5: 16px;
+    --h6: 14px;
+  }
+}
+h1,
+.h1-style {
+  font-size: var(--h1);
+  font-weight: 700;
+}
+
+h2,
+.h2-style {
+  font-size: var(--h2);
+  font-weight: 700;
+}
+
+h3,
+.h3-style {
+  font-size: var(--h3);
+  font-weight: 400;
+}
+
+h4,
+.h4-style {
+  font-size: var(--h4);
+  font-weight: 400;
+}
+
+h5,
+.h5-style {
+  font-size: var(--h5);
+  font-weight: 400;
+}
+
+h6,
+.h6-style {
+  font-size: var(--h6);
+  font-weight: 400;
+}
+
+.text-size-1 {
+  font-size: 16px;
+}
+
+.text-size-2 {
+  font-size: 24px;
+}
+
+.text-size-3 {
+  font-size: 32px;
+}
+
+.text-size-4 {
+  font-size: 40px;
+}
+
+.text-size-5 {
+  font-size: 48px;
+}
+
+.text-size-6 {
+  font-size: 56px;
+}
+
+.text-size-7 {
+  font-size: 64px;
+}
+
+.text-small {
+  font-size: 12.8px;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+/*# sourceMappingURL=style.css.map */
