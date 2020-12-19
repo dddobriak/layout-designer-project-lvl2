@@ -2,14 +2,31 @@
 // Breakpoints
 //
 @mixin size($direction, $size-type) {
-    @if($direction == 'up' and $size-type == 'mobile') {
-      @media (min-width: $size-sm-up) {
-        @content;
-      }
-    }
-    @if($direction == 'down' and $size-type == 'mobile') {
-      @media (min-width: $size-sm-down) {
-        @content;
-      }
-    }
+  @if($direction=='down') {
+    $size-type: $size-type - 0.02;
+  }
+
+  @media (min-width: $size-type) {
+    @content;
+  }
+}
+
+@mixin size-only($size-from, $size-to) {
+  $size-to: $size-to - 0.02;
+
+  @media (min-width: $size-from) and (max-width: $size-to) {
+    @content;
+  }
+}
+
+//
+// Gallery
+//
+@mixin gallery($image-size, $row-gap: $row-gap, $column-gap: $column-gap) {
+  // strip units
+  $image-size: $image-size / ($image-size * 0 + 1);
+
+  display: grid;
+  gap: $row-gap $column-gap;
+  grid-template-columns: repeat(auto-fit, minmax(#{$image-size}px, 1fr));
 }

@@ -1,0 +1,29 @@
+//
+// Backgrounds
+//
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: #{$color};
+  }
+}
+
+.bg-none {
+  background: none !important;
+}
+
+//
+// Text colors
+//
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: #{$color};
+  }
+}
+
+//
+// Borders
+//
+.bb-gray {
+  border: none;
+  border-bottom: 1px solid $gray;
+}
