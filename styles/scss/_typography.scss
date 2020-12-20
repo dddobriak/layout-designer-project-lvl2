@@ -78,7 +78,7 @@ p {
 
 h1,
 .h1-style {
-  font-size: var(--h1);
+  @include adaptiv-font($h1-d, $h1);
   font-weight: 700;
   line-height: var(--lh-h1);
 }
