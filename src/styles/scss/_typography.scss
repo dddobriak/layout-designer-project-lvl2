@@ -1,0 +1,168 @@
+//
+// Main font
+//
+@import url('//fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: $font-family;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+p {
+  line-height: 24px;
+  margin-bottom: 1em;
+}
+
+//
+// Heading sizes
+//
+// -- Heading sizes (Mobile)
+:root {
+  --h1: #{$h1};
+  --h2: #{$h2};
+  --h3: #{$h3};
+  --h4: #{$h4};
+  --h5: #{$h5};
+  --h6: #{$h6};
+}
+
+// -- Heading sizes (Desktop)
+@include size('up', $size-lg) {
+  :root {
+    --h1: #{$h1-d};
+    --h2: #{$h2-d};
+    --h3: #{$h3-d};
+    --h4: #{$h4-d};
+    --h5: #{$h5-d};
+    --h6: #{$h6-d};
+  }
+}
+
+//
+// Line heights
+//
+// -- Headings (moblie)
+:root {
+  --lh-h1: #{$lh-h1};
+  --lh-h2: #{$lh-h2};
+  --lh-h3: #{$lh-h3};
+}
+
+// -- Headings (desktop)
+@include size('up', $size-lg) {
+  :root {
+    --lh-h1: #{$lh-d-h1};
+    --lh-h2: #{$lh-d-h2};
+    --lh-h3: #{$lh-d-h3};
+  }
+}
+
+// -- Paragraphs
+@for $i from 1 through 6 {
+  $line-height: 1 + ($i * .25);
+  $lh-prefix: floor($line-height);
+
+  @if(($i % 4) !=0) {
+    $lh-prefix: $lh-prefix + '-' + str-slice("#{(($i % 4) * .25)}", 3);
+  }
+
+  .lh-#{$lh-prefix} {
+    line-height: #{$line-height};
+  }
+}
+
+h1,
+.h1-style {
+  @include adaptiv-font($h1-d, $h1);
+  font-weight: 700;
+  line-height: var(--lh-h1);
+}
+
+h2,
+.h2-style {
+  font-size: var(--h2);
+  font-weight: 700;
+  line-height: var(--lh-h2);
+}
+
+h3,
+.h3-style {
+  font-size: var(--h3);
+  font-weight: 700;
+  line-height: var(--lh-h3);
+
+  @include size('up', $size-lg) {
+    font-weight: 400;
+  }
+}
+
+h4,
+.h4-style {
+  font-size: var(--h4);
+  font-weight: 700;
+}
+
+h5,
+.h5-style {
+  font-size: var(--h5);
+  font-weight: 400;
+}
+
+h6,
+.h6-style {
+  font-size: var(--h6);
+  font-weight: 400;
+}
+
+//
+// Text sizes
+//
+@for $i from 1 through 7 {
+  .text-size-#{$i} {
+    font-size: 8px + ($i * 8);
+  }
+}
+
+.text-small {
+  font-size: $text-small;
+}
+
+//
+// Text styles
+//
+.text {
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-lowercase {
+    text-transform: lowercase;
+  }
+
+  &-capitalize {
+    text-transform: capitalize;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
+
+.fw {
+  &-normal {
+    font-weight: normal;
+  }
+}

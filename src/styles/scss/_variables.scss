@@ -1,0 +1,117 @@
+//
+// Fonts
+//
+// -- Main font
+$font-family: 'Roboto', Arial, sans-serif;
+
+// -- Text sizes
+$text-size-7: 64px;
+$text-size-6: 56px;
+$text-size-5: 48px;
+$text-size-4: 40px;
+$text-size-3: 32px;
+$text-size-2: 24px;
+$text-size-1: 16px;
+$text-small: 12.8px;
+
+// -- Heading sizes (Mobile)
+$h1: 30px;
+$h2: 18px;
+$h3: 16px;
+$h4: 18px;
+$h5: 16px;
+$h6: 14px;
+
+// -- Heading sizes (Desktop)
+$h1-d: 60px;
+$h2-d: 38px;
+$h3-d: 24px;
+$h4-d: 18px;
+$h5-d: 16px;
+$h6-d: 14px;
+
+// -- Heading line-heights
+$lh-h1: 45px;
+$lh-h2: 27px;
+$lh-h3: 24px;
+
+$lh-d-h1: $lh-h1 * 1.6;
+$lh-d-h2: $lh-h2 * 1.6;
+$lh-d-h3: $lh-h3 * 1.6;
+
+//
+// Colors
+//
+// -- Variables
+$black: #08020D;
+$white: #FFF;
+$gray: #E0E0E0;
+$dark-gray: #CACACA;
+$dark: #3C3B3D;
+$green: #34C176;
+$orange: #F89202;
+$purple: #5328A1;
+$red: #95390C;
+
+// -- Array
+$colors: (
+  "black": $black,
+  "white": $white,
+  "gray": $gray,
+  "dark-gray": $dark-gray,
+  "dark": $dark,
+  "green": $green,
+  "orange": $orange,
+  "purple": $purple,
+  "red": $red
+);
+
+//
+// Container settings
+//
+$container-width: 1200px;
+$container-padding: 20px;
+$container-padding-desktop: 25px;
+
+//
+// Breakpoints
+//
+$size-sm: 576px;
+$size-md: 768px;
+$size-lg: 992px;
+
+//
+// Spaces
+//
+$spaces: (
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left,
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left
+);
+
+//
+// Gallery
+//
+$image-size: 137px;
+$image-size-desktop: 250px;
+$row-gap: 25px;
+$column-gap: 50px;
+
+//
+// Split columns
+//
+@function splitcolumn($size, $number) {
+ @return ($size - ($container-padding * 2) - ($column-gap * ($number - 1))) / $number;
+}
+$grid-2-768: splitcolumn($size-md, 2);
+$grid-3-768: splitcolumn($size-md, 3);
+$grid-4-768: splitcolumn($size-md, 4);
+$grid-2-992: splitcolumn($size-lg, 2);
+$grid-3-992: splitcolumn($size-lg, 3);
+$grid-4-992: splitcolumn($size-lg, 4);
+// это я решил не использовать, но опыт полезный
