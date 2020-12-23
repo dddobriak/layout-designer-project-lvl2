@@ -34,8 +34,8 @@
 $max-resolution: 1920px;
 @mixin adaptiv-font($desctop-size, $mobile-size) {
   $sub-size: $desctop-size - $mobile-size;
-  $max-resolution: $max-resolution - $size-sm;
-  font-size: calc(#{$mobile-size} + #{strip-units($sub-size)} * ((100vw - #{$size-sm}) / #{strip-units($max-resolution)}));
+  $max-resolution: $max-resolution - 320;
+  font-size: calc(#{$mobile-size} + #{strip-units($sub-size)} * ((100vw - 320px) / #{strip-units($max-resolution)}));
 
   @include size('up', 1921px) {
     font-size: $desctop-size;
