@@ -4,33 +4,45 @@
 // -- rem
 @for $i from 1 through 5 {
 
-  @each $key,
-  $value in $spaces {
+  @each $key, $value in $spaces {
     .#{$key}-#{$i} {
       #{$value}: #{$i}rem;
     }
   }
 }
 
-@include size('up', $size-lg) {
-  .mb-lg-1 {
-    margin-bottom: 1rem;
-  }
+@include size('up', $size-md) {
+  @for $i from 1 through 5 {
 
-  .mb-lg-2 {
-    margin-bottom: 2rem;
+    @each $key, $value in $spaces {
+      .#{$key}-md-#{$i} {
+        #{$value}: #{$i}rem;
+      }
+    }
   }
 }
 
 // -- px
 $px: 25;
 
-@for $i from 1 through 5 {
+@for $i from 1 through 10 {
   $size: $i * $px;
 
   @each $key, $value in $spaces {
     .#{$key}-#{$size} {
       #{$value}: #{$size}px;
+    }
+  }
+}
+
+@include size('up', $size-md) {
+  @for $i from 1 through 10 {
+    $size: $i * $px;
+
+    @each $key, $value in $spaces {
+      .#{$key}-md-#{$size} {
+        #{$value}: #{$size}px;
+      }
     }
   }
 }

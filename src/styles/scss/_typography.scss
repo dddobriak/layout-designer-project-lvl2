@@ -76,6 +76,10 @@ p {
   }
 }
 
+.lh-150 {
+  line-height: 150%;
+}
+
 h1,
 .h1-style {
   @include adaptiv-font($h1-d, $h1);

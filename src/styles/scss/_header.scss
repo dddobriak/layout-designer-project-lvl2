@@ -70,7 +70,6 @@
     @include size('up', $size-lg) {
       grid-template-columns: 110px auto 248px;
       grid-template-rows: 1fr;
-      padding-bottom: 8rem;
     }
   }
 }
