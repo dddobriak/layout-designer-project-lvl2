@@ -6,7 +6,7 @@
   margin: 0 auto;
   padding: 0 $container-padding;
   max-width: $container-width;
-  
+
   @include size('up', $size-md) {
     padding: 0 $container-padding-desktop;
   }
@@ -89,7 +89,7 @@ div[class*="column-set"] {
   }
 }
 
-div[class*="column-set"]>div {
+div[class*="column-set"]>* {
   flex: 1 0 100%;
   padding-left: $container-padding;
   padding-right: $container-padding;
@@ -100,19 +100,19 @@ div[class*="column-set"]>div {
   }
 }
 
-div.column-set-2>div {
+div.column-set-2>* {
   @include size('up', $size-md) {
     flex: 1 0 50%;
   }
 }
 
-div.column-set-3>div {
+div.column-set-3>* {
   @include size('up', $size-md) {
     flex: 1 0 33.3333%;
   }
 }
 
-div.column-set-4>div {
+div.column-set-4>* {
   @include size('up', $size-sm) {
     flex: 1 0 50%;
   }
@@ -120,7 +120,7 @@ div.column-set-4>div {
   @include size('up', $size-md) {
     flex: 1 0 50%;
   }
-  
+
   @include size('up', $size-lg) {
     flex: 1 0 25%;
   }

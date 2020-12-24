@@ -29,7 +29,7 @@ $px: 25;
   $size: $i * $px;
 
   @each $key, $value in $spaces {
-    .#{$key}-#{$size} {
+    .#{$key}-#{$size}px {
       #{$value}: #{$size}px;
     }
   }
@@ -40,7 +40,7 @@ $px: 25;
     $size: $i * $px;
 
     @each $key, $value in $spaces {
-      .#{$key}-md-#{$size} {
+      .#{$key}-md-#{$size}px {
         #{$value}: #{$size}px;
       }
     }
