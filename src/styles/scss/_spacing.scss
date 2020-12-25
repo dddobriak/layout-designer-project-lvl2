@@ -1,46 +1,50 @@
 //
 // Spacings
 //
-// -- rem
+// -- px (16-80)
+$px: 16;
+
 @for $i from 1 through 5 {
-
-  @each $key, $value in $spaces {
-    .#{$key}-#{$i} {
-      #{$value}: #{$i}rem;
-    }
-  }
-}
-
-@include size('up', $size-md) {
-  @for $i from 1 through 5 {
-
-    @each $key, $value in $spaces {
-      .#{$key}-md-#{$i} {
-        #{$value}: #{$i}rem;
-      }
-    }
-  }
-}
-
-// -- px
-$px: 25;
-
-@for $i from 1 through 10 {
   $size: $i * $px;
 
   @each $key, $value in $spaces {
-    .#{$key}-#{$size}px {
+    .#{$key}-#{$size} {
       #{$value}: #{$size}px;
     }
   }
 }
 
 @include size('up', $size-md) {
-  @for $i from 1 through 10 {
+  @for $i from 1 through 5 {
     $size: $i * $px;
 
     @each $key, $value in $spaces {
-      .#{$key}-md-#{$size}px {
+      .#{$key}-md-#{$size} {
+        #{$value}: #{$size}px;
+      }
+    }
+  }
+}
+
+// -- px (50-250)
+$px: 25;
+
+@for $i from 1 through 10 {
+  $size: $i * $px;
+
+  @each $key, $value in $spaces {
+    .#{$key}-#{$size} {
+      #{$value}: #{$size}px;
+    }
+  }
+}
+
+@include size('up', $size-md) {
+  @for $i from 2 through 10 {
+    $size: $i * $px;
+
+    @each $key, $value in $spaces {
+      .#{$key}-md-#{$size} {
         #{$value}: #{$size}px;
       }
     }
